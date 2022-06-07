@@ -1,0 +1,39 @@
+/* Main Nav */
+.main-nav {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 20px;
+}
+
+.main-nav a {
+    color: #2c3e50;
+    font-weight: bold;
+}
+.main-nav a.router-link-exact-active {
+    color: #42b983;
+}
+
+/* Logo */
+.main-nav-logo {
+    align-items: center;
+    display: flex;
+}
+
+.main-nav-logo-image {
+    max-width: 100%;
+    width: 200px;
+}
+
+/* Links */
+.main-nav-item {
+    margin-right: 0.5rem;
+    text-decoration: none;
+}
+.main-nav-item:hover {
+    text-decoration: underline;
+}
+
+.main-nav-item .fa {
+    margin-right: 5px;
+}

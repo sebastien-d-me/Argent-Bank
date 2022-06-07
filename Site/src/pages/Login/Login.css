@@ -1,0 +1,52 @@
+/* Sign In Content */
+.sign-in-content {
+    background-color: white;
+    box-sizing: border-box;    
+    margin: 0 auto;
+    margin-top: 3rem;
+    padding: 2rem;
+    width: 300px;
+}
+
+/* Icon */
+.sign-in-icon {
+    font-size: 5rem;
+}
+
+/* Input */ 
+.input-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.input-wrapper label {
+    font-weight: bold;
+}
+  
+.input-wrapper input {
+    font-size: 1.2rem;
+    padding: 5px;
+}
+
+.input-remember {
+    display: flex;
+}
+  
+.input-remember label {
+    margin-left: 0.25rem;
+}
+
+/* Button */
+.sign-in-button {
+    background-color: #00bc77;
+    border-color: #00bc77;
+    color: #fff;
+    display: block;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-top: 1rem;
+    padding: 8px;    
+    width: 100%;
+}
