@@ -1,9 +1,25 @@
 import "./Header.css";
+import { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
+import { getLoginFetch } from "../../services/API";
 import { NavLink } from "react-router-dom";
 import logo from "../../assets/img/argentBankLogo.png";
 
 
 function Header() {
+    // Use State
+    let [firstName, setFirstName] = useState("");
+
+
+    // Use Selector / Use Effect
+    const token = useSelector((state) => state.token.value);
+    useEffect(() => {
+        const user = getLoginFetch(token);
+        user.then(obj => {
+            setFirstName(obj.firstName);
+        });
+    });
+
     return (
         <nav className="main-nav">
             <NavLink to="/" className="main-nav-logo">
@@ -12,20 +28,30 @@ function Header() {
             </NavLink>
             <div>
                 {/* Anonyme */}
-                <NavLink to="/login" className="main-nav-item">
-                    <i className="fa fa-user-circle"></i>
-                    Sign In
-                </NavLink>
+                { 
+                    token === 0 &&
+                    <>
+                        <NavLink to="/login" className="main-nav-item">
+                            <i className="fa fa-user-circle"></i>
+                            Sign In
+                        </NavLink>
+                    </>
+                }
                 
                 {/* Connecté */}
-                <NavLink to="/profil" className="main-nav-item">
-                    <i className="fa fa-user-circle"></i>
-                    Tony
-                </NavLink>
-                <NavLink to="/login" className="main-nav-item">
-                    <i className="fa fa-sign-out"></i>
-                    Sign Out
-                </NavLink>
+                {
+                    token !== 0 &&
+                    <>
+                        <NavLink to="/profil" className="main-nav-item">
+                            <i className="fa fa-user-circle"></i>
+                            {firstName}
+                        </NavLink>
+                        <NavLink to="/logout" className="main-nav-item">
+                            <i className="fa fa-sign-out"></i>
+                            Sign Out
+                        </NavLink>
+                    </>
+                }
             </div>
         </nav>
     );

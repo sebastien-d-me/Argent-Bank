@@ -3,39 +3,32 @@ import { getLoginData, getLoginFetchData } from "../services/API-Data";
 
 /* Get Login */
 export const getLogin = async (identifiants) => {
-    try {
-        const URL_API = "http://localhost:3001/api/v1/user/login";
+    const URL_API = "http://localhost:3001/api/v1/user/login";
 
-        const loginResponse = await fetch(URL_API, {
-            body: JSON.stringify(identifiants),
-            headers: {
-                "Content-Type": "application/json",
-            },
-            method: "POST"
-        }).then((response) => response.json());
+    const loginResponse = await fetch(URL_API, {
+        body: JSON.stringify(identifiants),
+        headers: {
+            "Content-Type": "application/json",
+        },
+        method: "POST"
+    }).then((response) => response.json());
 
-        return await getLoginData(loginResponse);
-    } catch(error) {
-        return error;
-    }
+    console.clear();
+    return await getLoginData(loginResponse);
 }
 
 /* See if user is connected */
 export const getLoginFetch = async (token) => {
-    try {
-        console.log(token)
-        const URL_API = "http://localhost:3001/api/v1/user/profile";
+    const URL_API = "http://localhost:3001/api/v1/user/profile";
 
-        const loginFetchResponse = await fetch(URL_API, {
-            headers: {
-                "Content-Type": "application/json",
-                "Authorization": "Bearer" + token
-            },
-            method: "POST"
-        }).then((response) => response.json());
-        console.log(loginFetchResponse)
-        return await getLoginFetchData(loginFetchResponse);
-    } catch(error) {
-        return error;
-    }
+    const loginFetchResponse = await fetch(URL_API, {
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": "Bearer" + token
+        },
+        method: "POST"
+    }).then((response) => response.json());
+
+    console.clear();
+    return await getLoginFetchData(loginFetchResponse);
 }
