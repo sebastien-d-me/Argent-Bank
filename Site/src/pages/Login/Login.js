@@ -14,7 +14,7 @@ function Login() {
     let [password, setPassword] = useState("");
 
 
-    // Use Selector / Use Effect
+    // Use Selector
     const token = useSelector((state) => state.token.value);
 
 

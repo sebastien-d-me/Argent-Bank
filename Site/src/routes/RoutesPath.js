@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout";
 import Accueil from "../pages/Accueil/Accueil";
 import Login from "../pages/Login/Login";
 import Profil from "../pages/Profil/Profil";
+import Logout from "../pages/Logout/Logout";
 
 
 function RoutesPath() {
@@ -13,6 +14,7 @@ function RoutesPath() {
                     <Route path="/" element={<Accueil />} />
                     <Route path="/login" element={<Login />} />
                     <Route path="/profil" element={<Profil />} />
+                    <Route path="/logout" element={<Logout />} />
                 </Routes>
             </Layout>
         </BrowserRouter>
