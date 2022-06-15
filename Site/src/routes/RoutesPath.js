@@ -4,6 +4,7 @@ import Accueil from "../pages/Accueil/Accueil";
 import Login from "../pages/Login/Login";
 import Profil from "../pages/Profil/Profil";
 import Logout from "../pages/Logout/Logout";
+import Erreur404 from "../pages/404/404";
 
 
 function RoutesPath() {
@@ -15,6 +16,7 @@ function RoutesPath() {
                     <Route path="/login" element={<Login />} />
                     <Route path="/profil" element={<Profil />} />
                     <Route path="/logout" element={<Logout />} />
+                    <Route path="*" element={<Erreur404 />} />
                 </Routes>
             </Layout>
         </BrowserRouter>

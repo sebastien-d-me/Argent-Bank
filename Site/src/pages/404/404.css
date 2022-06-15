@@ -1,0 +1,25 @@
+/* Erreur 404*/
+.erreur-404 {
+    color: #ffffff;
+    margin: 0 auto;
+    margin-top: 3rem;
+    padding: 2rem;
+    width: 300px;
+}
+
+/* Button */
+.link-btn-404 {
+    text-decoration: none;
+}
+
+.btn-404 {
+    background-color: #00bc77;
+    border-color: #00bc77;
+    color: #fff;
+    display: block;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-top: 1rem;
+    padding: 8px;    
+    width: 100%;
+}
