@@ -32,3 +32,5 @@ export const getLoginFetch = async (token) => {
     console.clear();
     return await getLoginFetchData(loginFetchResponse);
 }
+
+/* Save the new name */
