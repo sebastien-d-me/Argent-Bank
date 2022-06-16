@@ -1,7 +1,7 @@
 import "./Profil.css";
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
-import { getLoginFetch } from "../../services/API";
+import { getLoginFetch, saveUserProfil } from "../../services/API";
 import { Navigate } from "react-router-dom";
 import Account from "../../components/Feature/Account/Account";
 
@@ -41,6 +41,8 @@ function Profil() {
         document.getElementById("edit-button").style.display = "initial";
         document.getElementById("edit-section").style.display = "none";
         setFullName(`${newFirstName} ${newLastName}`);
+        const fullName = {"firstName": newFirstName, "lastName": newLastName};
+        saveUserProfil(token, fullName);
     }
 
 

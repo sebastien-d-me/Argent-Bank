@@ -1,4 +1,4 @@
-import { getLoginData, getLoginFetchData } from "../services/API-Data";
+import { getLoginData, getLoginFetchData, saveUserProfilData } from "../services/API-Data";
 
 
 /* Get Login */
@@ -34,3 +34,18 @@ export const getLoginFetch = async (token) => {
 }
 
 /* Save the new name */
+export const saveUserProfil = async (token, fullName) => {
+    const URL_API = "http://localhost:3001/api/v1/user/profile";
+
+    const saveUserProfilResponse = await fetch(URL_API, {
+        body: JSON.stringify(fullName),
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": "Bearer" + token
+        },
+        method: "PUT"
+    }).then((response) => response.json());
+
+    console.clear();
+    return await saveUserProfilData(saveUserProfilResponse);
+}

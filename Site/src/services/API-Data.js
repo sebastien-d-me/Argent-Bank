@@ -31,3 +31,13 @@ export function getLoginFetchData(data) {
         return obj;
     }
 }
+
+/* Save User Profil Data */
+export function saveUserProfilData(data) {
+    const obj = {
+        status: data.status,
+        message: data.message,
+    }
+
+    return obj;
+}
