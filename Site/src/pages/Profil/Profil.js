@@ -1,46 +1,50 @@
 import "./Profil.css";
 import { useState, useEffect } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { getLoginFetch, saveUserProfil } from "../../services/API";
+import { getFirstName } from "../../features/User/firstName";
+import { getLastName } from "../../features/User/lastName";
 import { Navigate } from "react-router-dom";
 import Account from "../../components/Feature/Account/Account";
 
 
 function Profil() {
     // Use State
-    let [firstName, setFirstName] = useState("");
-    let [lastName, setLastName] = useState("");
-    let [fullName, setFullName] = useState("");
-
     let [newFirstName, setNewFirstName] = useState("");
     let [newLastName, setNewLastName] = useState("");
 
 
     // Use Selector / Use Effect
+    const dispatch = useDispatch();
+
+    const firstName = useSelector((state) => state.firstName.value);
+    const lastName = useSelector((state) => state.lastName.value);
     const token = useSelector((state) => state.token.value);
+
     useEffect(() => {
         const user = getLoginFetch(token);
         user.then(obj => {
-            setFirstName(obj.firstName);
-            setLastName(obj.lastName);
-            setFullName(`${obj.firstName} ${obj.lastName}`);
+            dispatch(getFirstName(obj.firstName));
+            dispatch(getLastName(obj.lastName));
         });
     }, []);
 
 
     // Edit name
     const handleEdit = () => {
+        document.getElementById("fullName").style.display = "none";
         document.getElementById("edit-button").style.display = "none";
         document.getElementById("edit-section").style.display = "block";
-        setFullName("");
     }
 
     
     // Save Edit
     const handleEditSave = () => {
+        document.getElementById("fullName").style.display = "block";
         document.getElementById("edit-button").style.display = "initial";
         document.getElementById("edit-section").style.display = "none";
-        setFullName(`${newFirstName} ${newLastName}`);
+        dispatch(getFirstName(newFirstName));
+        dispatch(getLastName(newLastName));
         const fullName = {"firstName": newFirstName, "lastName": newLastName};
         saveUserProfil(token, fullName);
     }
@@ -48,9 +52,9 @@ function Profil() {
 
     // Cancel Edit
     const handleEditCancel = () => {
+        document.getElementById("fullName").style.display = "block";
         document.getElementById("edit-button").style.display = "initial";
         document.getElementById("edit-section").style.display = "none";
-        setFullName(`${firstName} ${lastName}`);
     }
 
 
@@ -60,7 +64,10 @@ function Profil() {
     return (
         <main className="bg-dark">
             <div className="header">
-                <h1 id="welcome-name">Welcome back<br />{fullName}</h1>
+                <h1 id="welcome-name">
+                    Welcome back<br />
+                    <span id="fullName">{firstName} {lastName}</span>
+                </h1>
                 <button id="edit-button" type="button" onClick={handleEdit}>Edit Name</button>
                 <div id="edit-section">
                     <form name="edit">
