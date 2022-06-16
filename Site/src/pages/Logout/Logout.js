@@ -1,9 +1,9 @@
 import { useDispatch } from "react-redux";
+import { useEffect } from "react";
 import { getToken } from "../../features/Token/token";
-import { Navigate } from "react-router-dom";
 import { getFirstName } from "../../features/User/firstName";
 import { getLastName } from "../../features/User/lastName";
-import { useEffect } from "react";
+import { Navigate } from "react-router-dom";
 
 
 function Logout() {
@@ -16,7 +16,7 @@ function Logout() {
         dispatch(getLastName(""));
     });
     
-    
+
     // Redirection
     return <Navigate to="/" /> 
 }

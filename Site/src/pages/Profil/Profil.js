@@ -19,6 +19,7 @@ function Profil() {
 
     const firstName = useSelector((state) => state.firstName.value);
     const lastName = useSelector((state) => state.lastName.value);
+    
     const token = useSelector((state) => state.token.value);
 
     useEffect(() => {
