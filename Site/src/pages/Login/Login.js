@@ -1,5 +1,5 @@
 import "./Login.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getLogin } from "../../services/API";
 import { getToken } from "../../features/Token/token";
@@ -17,6 +17,16 @@ function Login() {
 
     // Use Selector
     const token = useSelector((state) => state.token.value);
+
+
+    // Use Effect
+    useEffect(() => {
+        if(token === localStorage.getItem("token")) {
+            ajoutToken(localStorage.getItem("token"));
+        }
+    });
+
+
 
     // Handle Submit
     const handleSubmit = (event) => {
@@ -47,7 +57,7 @@ function Login() {
 
 
     // Redirection
-    if(token !== 0 || loginStatus === 200) return <Navigate to="/profil" /> 
+    if(token !== 0 || loginStatus === 200 || token === localStorage.getItem("token")) return <Navigate to="/profil" /> 
 
     return (
         <main className="bg-dark">

@@ -1,13 +1,30 @@
 import "./Header.css";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { getToken } from "../../features/Token/token";
+import { getLoginFetch } from "../../services/API";
+import { getFirstName } from "../../features/User/firstName";
 import { NavLink } from "react-router-dom";
 import logo from "../../assets/img/argentBankLogo.png";
 
 
 function Header() {
-    // Use Selector / Use Effect
+    // Use Selector
     const firstName = useSelector((state) => state.firstName.value);
     const token = useSelector((state) => state.token.value);
+
+
+    // Use Effect
+    const dispatch = useDispatch();
+    useEffect(() => {
+        if(token === localStorage.getItem("token")) {
+            dispatch(getToken(localStorage.getItem("token")));
+            const user = getLoginFetch(token);
+            user.then(obj => {
+                dispatch(getFirstName(obj.firstName));
+            });
+        }
+    });
 
     return (
         <nav className="main-nav">

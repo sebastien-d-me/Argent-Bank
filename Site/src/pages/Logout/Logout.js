@@ -14,6 +14,8 @@ function Logout() {
         dispatch(getToken(0));
         dispatch(getFirstName(""));
         dispatch(getLastName(""));
+
+        localStorage.removeItem("token");
     });
     
 

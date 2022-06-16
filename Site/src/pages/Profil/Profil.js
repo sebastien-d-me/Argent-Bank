@@ -72,10 +72,10 @@ function Profil() {
                 <button id="edit-button" type="button" onClick={handleEdit}>Edit Name</button>
                 <div id="edit-section">
                     <form name="edit">
-                        <div class="profil-input-wrapper">
+                        <div className="profil-input-wrapper">
                             <input type="text" placeholder={firstName} onChange={e => setNewFirstName(e.target.value)} required />
                         </div>
-                        <div class="profil-input-wrapper">
+                        <div className="profil-input-wrapper">
                             <input type="text" placeholder={lastName} onChange={e => setNewLastName(e.target.value)} required />
                         </div>
                     </form>
