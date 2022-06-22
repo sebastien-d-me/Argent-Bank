@@ -8,6 +8,7 @@ import { Navigate } from "react-router-dom";
 
 function Login() {
     // Use State
+    let [loginErreur, setLoginErreur] = useState("");
     let [loginStatus, setLoginStatus] = useState(0);
 
     let [email, setEmail] = useState("");
@@ -31,11 +32,14 @@ function Login() {
     // Handle Submit
     const handleSubmit = (event) => {
         event.preventDefault();
-        const login = getLogin({"email": "tony@stark.com", "password": "password123"});
-        /*const loginStatus = getLogin({"email": email, "password": password});*/
+        const login = getLogin({"email": email, "password": password});
         login.then(obj => {
-            setLoginStatus(obj.status);
-            ajoutToken(obj.token);
+            if(obj.status !== 400) {
+                setLoginStatus(obj.status);
+                ajoutToken(obj.token);
+            } else {
+                setLoginErreur(obj.message);
+            }
         });
     }
 
@@ -76,6 +80,9 @@ function Login() {
                     <div className="input-remember">
                         <input type="checkbox" id="remember-me" onChange={handleRemember} />
                         <label htmlFor="remember-me">Remember me</label>
+                    </div>
+                    <div>
+                        {loginErreur}
                     </div>
                     <button className="sign-in-button">Sign In</button>
                 </form>
