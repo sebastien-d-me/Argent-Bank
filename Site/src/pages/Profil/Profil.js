@@ -5,7 +5,7 @@ import { getLoginFetch, saveUserProfil } from "../../services/API";
 import { getFirstName } from "../../features/User/firstName";
 import { getLastName } from "../../features/User/lastName";
 import { Navigate } from "react-router-dom";
-import Account from "../../components/Feature/Account/Account";
+import Account from "../../components/Account/Account";
 
 
 function Profil() {
