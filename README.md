@@ -22,4 +22,4 @@ Ce projet est le n°13 du parcours [**Développeur Front-End**](https://openclas
 
 ### Informations complémentaires
 - Soutenance validé le 28/06/2022.
-- Lien vers le site : [Cliquez-ici](https://sebastien-d-me.github.io/SebastienDelahaye_13_31052022/ "Cliquez-ici").
+- Lien vers le site : [Cliquez-ici](https://sebastien-d-me.github.io/SebastienDelahaye_13_31052022/ "Cliquez-ici"). [La connexion ne fonctionnera pas vu qu'il faut lancer le Back-End].
