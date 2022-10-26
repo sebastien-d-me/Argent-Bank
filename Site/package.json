@@ -1,7 +1,7 @@
 {
-  "name": "site",
-  "version": "0.1.0",
-  "homepage": "https://sebastien-d-me.github.io/SebastienDelahaye_13_31052022/",
+  "name": "argent-bank",
+  "version": "1.0.0",
+  "homepage": "https://sebastien-d-me.github.io/Argent-Bank/",
   "private": true,
   "dependencies": {
     "-": "^0.0.1",
