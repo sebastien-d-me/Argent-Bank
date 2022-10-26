@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/SebastienDelahaye_13_31052022/static/css/main.3f4fa273.css",
-    "main.js": "/SebastienDelahaye_13_31052022/static/js/main.1acc7b3f.js",
-    "static/js/787.dd4029b4.chunk.js": "/SebastienDelahaye_13_31052022/static/js/787.dd4029b4.chunk.js",
-    "static/media/bank-tree.jpeg": "/SebastienDelahaye_13_31052022/static/media/bank-tree.4d59987c7c62b024b014.jpeg",
-    "static/media/icon-security.png": "/SebastienDelahaye_13_31052022/static/media/icon-security.1c819fa1007a5c53e6a9.png",
-    "static/media/argentBankLogo.png": "/SebastienDelahaye_13_31052022/static/media/argentBankLogo.e031a16c76ab9bbbf78a.png",
-    "static/media/icon-chat.png": "/SebastienDelahaye_13_31052022/static/media/icon-chat.e238539d82b5a5f63c33.png",
-    "static/media/icon-money.png": "/SebastienDelahaye_13_31052022/static/media/icon-money.8ec88bb1a5070fd6513a.png",
-    "index.html": "/SebastienDelahaye_13_31052022/index.html",
-    "main.3f4fa273.css.map": "/SebastienDelahaye_13_31052022/static/css/main.3f4fa273.css.map",
-    "main.1acc7b3f.js.map": "/SebastienDelahaye_13_31052022/static/js/main.1acc7b3f.js.map",
-    "787.dd4029b4.chunk.js.map": "/SebastienDelahaye_13_31052022/static/js/787.dd4029b4.chunk.js.map"
+    "main.css": "/Argent-Bank/static/css/main.c8264f6c.css",
+    "main.js": "/Argent-Bank/static/js/main.9fa409cc.js",
+    "static/js/787.b97ecb45.chunk.js": "/Argent-Bank/static/js/787.b97ecb45.chunk.js",
+    "static/media/bank-tree.jpeg": "/Argent-Bank/static/media/bank-tree.4d59987c7c62b024b014.jpeg",
+    "static/media/icon-security.png": "/Argent-Bank/static/media/icon-security.1c819fa1007a5c53e6a9.png",
+    "static/media/argentBankLogo.png": "/Argent-Bank/static/media/argentBankLogo.e031a16c76ab9bbbf78a.png",
+    "static/media/icon-chat.png": "/Argent-Bank/static/media/icon-chat.e238539d82b5a5f63c33.png",
+    "static/media/icon-money.png": "/Argent-Bank/static/media/icon-money.8ec88bb1a5070fd6513a.png",
+    "index.html": "/Argent-Bank/index.html",
+    "main.c8264f6c.css.map": "/Argent-Bank/static/css/main.c8264f6c.css.map",
+    "main.9fa409cc.js.map": "/Argent-Bank/static/js/main.9fa409cc.js.map",
+    "787.b97ecb45.chunk.js.map": "/Argent-Bank/static/js/787.b97ecb45.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3f4fa273.css",
-    "static/js/main.1acc7b3f.js"
+    "static/css/main.c8264f6c.css",
+    "static/js/main.9fa409cc.js"
   ]
 }
