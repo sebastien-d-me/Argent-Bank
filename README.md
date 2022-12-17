@@ -1,3 +1,5 @@
+<meta property="og:image" content="https://raw.githubusercontent.com/sebastien-d-me/Argent-Bank/master/Site/public/logo512.png">
+
 # Formation Développeur Front-End
 ## Projet 13 - Argent Bank
 ------------
